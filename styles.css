@@ -6,3 +6,21 @@
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+.calculate-btn{
+    border-radius: 50%;
+    height:100px;
+    width:100px;
+    background-color: hsl(259, 100%, 65%);
+    border: none;
+}
+
+#year, #month, #day{
+    width: 100px;
+    font-size: 32px;
+    margin-right:5rem;
+}
+
+#ageInYears, #ageInMonths, #ageInDays{
+    font-size: 5rem;
+}
