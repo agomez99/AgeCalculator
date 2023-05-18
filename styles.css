@@ -1,3 +1,13 @@
+body{
+background-color:hsl(0, 0%, 94%);
+}
+
+#main-container{
+    background-color:hsl(203, 8%, 70%);
+    margin:5% 30% 30% 20%;
+    border-radius: 5% 5% 30% 5%;
+    padding-top: 5%;
+}
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -16,16 +26,11 @@
 }
 
 
-#year, #month, #day{
-    width: 100px;
-    font-size: 32px;
-    margin-right:5rem;
-}
-
 #day, #month, #year{
     font-size: 3rem;
     width: 170px;
-    margin-right:2rem;
+    margin-right:3rem;
+    font-size: 32px;
 
 }
 
@@ -38,17 +43,16 @@
 }
 
 #titles{
-    margin-left: 30%;
-    margin-top: 15%;
+    margin-right: 15%;
 
 }
 
 .title-month{
-    margin-left: 20%;
+    margin-left:20%;
 }
 
 .title-year{
-    margin-left: 20%;
+    margin-left:20%;
 }
 
 #inputs{
@@ -57,4 +61,8 @@
 
 .btn-cal{
     margin-left: 80%;
+}
+
+.color-purp{
+    color: hsl(259, 100%, 65%);
 }

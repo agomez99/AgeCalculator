@@ -62,9 +62,9 @@ function calculateAge() {
     }
   
     // Update HTML with calculated age
-    document.getElementById('ageInYears').innerHTML = ageInYears + ' years';
-    document.getElementById('ageInMonths').innerHTML = ageInMonths + ' months';
-    document.getElementById('ageInDays').innerHTML = ageInDays + ' days';
+    document.getElementById('ageInYears').innerHTML = "<span class='color-purp'>" + ageInYears + "</span>" +  ' years';
+    document.getElementById('ageInMonths').innerHTML = "<span class='color-purp'>" + ageInMonths + "</span>" + ' months';
+    document.getElementById('ageInDays').innerHTML = "<span class='color-purp'>"+ageInDays+"</span>" + ' days';
   
     // Reset input fields
     [day, month, year].forEach(() => {
