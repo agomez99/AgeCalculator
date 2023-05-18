@@ -9,11 +9,12 @@
 
 .calculate-btn{
     border-radius: 50%;
-    height:100px;
-    width:100px;
+    height:80px;
+    width:80px;
     background-color: hsl(259, 100%, 65%);
     border: none;
 }
+
 
 #year, #month, #day{
     width: 100px;
@@ -21,6 +22,39 @@
     margin-right:5rem;
 }
 
+#day, #month, #year{
+    font-size: 3rem;
+    width: 170px;
+    margin-right:2rem;
+
+}
+
 #ageInYears, #ageInMonths, #ageInDays{
     font-size: 5rem;
+}
+
+#total{
+    margin-left: 20%;
+}
+
+#titles{
+    margin-left: 30%;
+    margin-top: 15%;
+
+}
+
+.title-month{
+    margin-left: 20%;
+}
+
+.title-year{
+    margin-left: 20%;
+}
+
+#inputs{
+    margin-bottom: 5%;
+}
+
+.btn-cal{
+    margin-left: 80%;
 }
