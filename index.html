@@ -13,33 +13,35 @@
 </head>
 
 <body>
-  <main id="main-container">
-    <div class="container" >
-      <div class="" >
-        <div class="col d-flex justify-content-center" id="titles">
-          <div class="title-day"> Day</div>
-          <div class="title-month"> Month </div>
-          <div class="title-year"> YYYY</div>
+  <main >
+    <div id="main-container">
+    <div class="container">
+      <div class="d-flex" id="inputs">
+        <div>
+          <label class="title-day">DAY</label>
+          <input id="day" type="number" placeholder="DD"/>
+          <span id="alert-day"></span>
+        </div>
+        <div>
+          <label class="title-month">MONTH</label>
+          <input id="month" type="number" placeholder="MM"/>
+          <span id="alert-month"></span>
+        </div>
+        <div>
+          <label class="title-year"> YEAR</label>
+          <input id="year" type="number" placeholder="YYYY"/>
+          <span id="alert-year"></span>
         </div>
       </div>
-      <div class="row d-flex justify-content-center" id="inputs">
-        <input id="day" type="number" />
-        <input id="month" type="number" />
-        <input id="year" type="number" />
-      </div>
-      <div class="row d-flex justify-content-center">
-        <div id="alert-day"></div>
-        <div id="alert-month"></div>
-        <div id="alert-year"></div>
-      </div>
-      <div>
+      <hr>
+
         <div class="btn-cal">
           <button onclick="calculateAge()" class="calculate-btn">
             <img src="./assets/images/icon-arrow.svg" alt="btnimage" />
           </button>
         </div>
       </div>
-      <div class="row d-flex justify-content-center text-left" id="total">
+      <div class="row d-flex " id="total">
         <p>
         <div id="ageInYears"><span class="color-purp">--</span>years:</div>
         <div id="ageInMonths"><span class="color-purp">--</span>months:</div>
@@ -49,6 +51,7 @@
     </div>
     </div>
     </div>
+  </div>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

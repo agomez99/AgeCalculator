@@ -25,10 +25,26 @@ function calculateAge() {
     };
   
     // Input validation
+    if(inputMonth == 0)
+    {
+      alerts.month.innerHTML = 'This field is required';
+      return;
+    }
+    if(inputDay == 0)
+    {
+      alerts.day.innerHTML = 'This field is required';
+      return;
+    }
+    if(inputYear == 0)
+    {
+      alerts.year.innerHTML = 'This field is required';
+      return;
+    }
     if (inputMonth < 1 || inputMonth > 12) {
       alerts.month.innerHTML = 'Must be a valid month';
       return;
     }
+    
     if (inputDay < 1 || inputDay > monthDays[inputMonth - 1]) {
       alerts.day.innerHTML = 'Must be a valid day';
       return;

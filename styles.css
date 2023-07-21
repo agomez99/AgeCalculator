@@ -1,36 +1,66 @@
-body{
-background-color:hsl(0, 0%, 94%);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+ html{
+
+}
+main{
+    background-color:  hsl(0, 0%, 94%);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  
+    font-family: 'Poppins', sans-serif;
+
+
 }
 
 #main-container{
-    background-color:hsl(203, 8%, 70%);
-    margin:5% 30% 30% 20%;
+    background-color:hsl(0, 0%, 100%);
+    width:52rem;
+    height:47rem;
     border-radius: 5% 5% 30% 5%;
     padding-top: 5%;
 }
-.attribution {
-    font-size: 11px;
-    text-align: center;
+input, label {
+    display:block;
 }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+input{
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 94%);
+    color:hsl(0, 1%, 44%);
+    font-weight: 700;
 }
 
+input[type=number] {
+padding-left: 2rem;
+}
 .calculate-btn{
     border-radius: 50%;
-    height:80px;
-    width:80px;
+    height:100px;
+    width:100px;
     background-color: hsl(259, 100%, 65%);
     border: none;
 }
+.calculate-btn:active{
+    background-color: black;
+    transform: translateY(4px);
 
+}
+.title-day, .title-month, .title-year{
+    color:hsl(0, 1%, 44%);
+    font-weight: 700;
+
+}
 
 #day, #month, #year{
     font-size: 3rem;
     width: 170px;
     margin-right:3rem;
     font-size: 32px;
+    height:80px;
+   
 
 }
 
@@ -39,21 +69,19 @@ background-color:hsl(0, 0%, 94%);
 }
 
 #total{
-    margin-left: 20%;
+    margin-left: 5%;
+    line-height:110px;
 }
 
 #titles{
     margin-right: 15%;
 
 }
-
-.title-month{
-    margin-left:20%;
+#alert-day, #alert-month, #alert-year{
+    color:hsl(0, 100%, 67%);
+    font-style: italic;
 }
 
-.title-year{
-    margin-left:20%;
-}
 
 #inputs{
     margin-bottom: 5%;
@@ -65,4 +93,10 @@ background-color:hsl(0, 0%, 94%);
 
 .color-purp{
     color: hsl(259, 100%, 65%);
+}
+
+#ageInYears, #ageInMonths, #ageInDays{
+    font-size: 110px;
+    font-weight: 900;
+    font-style: italic;
 }
