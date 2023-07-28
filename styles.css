@@ -17,10 +17,10 @@ main{
 
 #main-container{
     background-color:hsl(0, 0%, 100%);
-    width:52rem;
-    height:47rem;
+    width:55rem;
+    height:40rem;
     border-radius: 5% 5% 30% 5%;
-    padding-top: 5%;
+    padding: 2%;
 }
 input, label {
     display:block;
@@ -42,6 +42,8 @@ padding-left: 2rem;
     width:100px;
     background-color: hsl(259, 100%, 65%);
     border: none;
+    position: relative;
+    top: -60px;
 }
 .calculate-btn:active{
     background-color: black;
@@ -57,7 +59,7 @@ padding-left: 2rem;
 #day, #month, #year{
     font-size: 3rem;
     width: 170px;
-    margin-right:3rem;
+    margin-right:2rem;
     font-size: 32px;
     height:80px;
    
@@ -70,6 +72,7 @@ padding-left: 2rem;
 
 #total{
     margin-left: 5%;
+    margin-top: -10%;
     line-height:110px;
 }
 
@@ -85,6 +88,7 @@ padding-left: 2rem;
 
 #inputs{
     margin-bottom: 5%;
+    margin-top: 5%;
 }
 
 .btn-cal{
@@ -100,3 +104,10 @@ padding-left: 2rem;
     font-weight: 900;
     font-style: italic;
 }
+hr {
+    width: 80%; /* You can change this value to whatever you need, such as '200px', '75%', etc. */
+    margin: 0 auto; /* Optional: To center the <hr> horizontally on the page */
+  }
+  .error-label {
+    color: red;
+  }

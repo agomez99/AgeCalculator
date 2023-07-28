@@ -1,92 +1,115 @@
 function calculateAge() {
-    // Present date
-    const currentDate = new Date();
-    const [currentDay, currentMonth, currentYear] = [
-      currentDate.getDate(),
-      currentDate.getMonth() + 1,
-      currentDate.getFullYear()
-    ];
-  
-    // Input date
-    const [inputDay, inputMonth, inputYear] = [
-      Number(document.getElementById('day').value),
-      Number(document.getElementById('month').value),
-      Number(document.getElementById('year').value)
-    ];
-  
-    // Months and days counts
-    const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  
-    // Alert messages
-    const alerts = {
-      month: document.getElementById('alert-month'),
-      day: document.getElementById('alert-day'),
-      year: document.getElementById('alert-year')
-    };
-  
-    // Input validation
-    if(inputMonth == 0)
-    {
-      alerts.month.innerHTML = 'This field is required';
-      return;
-    }
-    if(inputDay == 0)
-    {
-      alerts.day.innerHTML = 'This field is required';
-      return;
-    }
-    if(inputYear == 0)
-    {
-      alerts.year.innerHTML = 'This field is required';
-      return;
-    }
-    if (inputMonth < 1 || inputMonth > 12) {
-      alerts.month.innerHTML = 'Must be a valid month';
-      return;
-    }
-    
-    if (inputDay < 1 || inputDay > monthDays[inputMonth - 1]) {
-      alerts.day.innerHTML = 'Must be a valid day';
-      return;
-    }
-    if (inputYear < 1900 || inputYear > currentYear) {
-      alerts.year.innerHTML = 'Must be a valid year';
-      return;
-    }
-    if (
-      inputMonth === 2 &&
-      inputDay > 28 &&
-      (inputYear % 4 !== 0 || (inputYear % 100 === 0 && inputYear % 400 !== 0))
-    ) {
-      alerts.day.innerHTML = 'Must be a valid day';
-      return;
-    }
-  
-    // Calculate age in years, months, and days
-    let ageInDays = currentDay - inputDay;
-    let ageInMonths = currentMonth - inputMonth;
-    let ageInYears = currentYear - inputYear;
-  
-    if (ageInMonths < 0) {
-      ageInMonths += 12;
-      ageInYears--;
-    }
-  
-    if (ageInDays < 0) {
-      ageInDays += monthDays[currentMonth - 1];
-      ageInMonths--;
-    }
-  
-    // Update HTML with calculated age
-    document.getElementById('ageInYears').innerHTML = "<span class='color-purp'>" + ageInYears + "</span>" +  ' years';
-    document.getElementById('ageInMonths').innerHTML = "<span class='color-purp'>" + ageInMonths + "</span>" + ' months';
-    document.getElementById('ageInDays').innerHTML = "<span class='color-purp'>"+ageInDays+"</span>" + ' days';
-  
-    // Reset input fields
-    [day, month, year].forEach(() => {
-      document.getElementById().value = '';
-;
-    });
-  }
-  
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentYear = currentDate.getFullYear();
 
+  const inputDayElement = document.getElementById('day');
+  const inputMonthElement = document.getElementById('month');
+  const inputYearElement = document.getElementById('year');
+
+  const titleDay = document.getElementsByClassName('title-day');
+  const titleMonth = document.getElementsByClassName('title-month');
+  const titleYear = document.getElementsByClassName('title-year');
+
+  const inputDay = Number(inputDayElement.value);
+  const inputMonth = Number(inputMonthElement.value);
+  const inputYear = Number(inputYearElement.value);
+
+  const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  const alerts = {
+    month: document.getElementById('alert-month'),
+    day: document.getElementById('alert-day'),
+    year: document.getElementById('alert-year'),
+     //titleMonth:document.getElementById('title-month'),
+    // titleDay:document.getElementById('title-day'),
+    // titleYear:document.getElementById('title-year')
+  };
+
+  const clearErrorMessage = (element) => {
+    element.innerHTML = '';
+  };
+
+  inputDayElement.addEventListener('input', () => {
+
+    clearErrorMessage(alerts.day);
+    //clearErrorMessage(alerts.titleDay);
+  });
+
+  inputMonthElement.addEventListener('input', () => {
+    clearErrorMessage(alerts.month);
+  });
+
+  inputYearElement.addEventListener('input', () => {
+    clearErrorMessage(alerts.year);
+  });
+
+  for (const key in alerts) {
+    clearErrorMessage(alerts[key]);
+  }
+
+  let hasError = false;
+
+  if (inputDay === 0 || inputDay > monthDays[inputMonth - 1]) {
+    alerts.day.innerHTML = inputDay === 0 ? 'This field is required' : 'Must be a valid day';
+    //document.getElementById('title-day').classList.add('error-label');
+
+    hasError = true;
+
+  }
+
+
+
+  if (inputMonth < 1 || inputMonth > 12) {
+    alerts.month.innerHTML = inputMonth === 0 ? 'This field is required' :'Must be a valid month';
+    hasError = true;
+
+  }
+
+  if (inputYear < 1900 || inputYear > currentYear) {
+    alerts.year.innerHTML = inputYear === 0 ? 'This field is required' :'Must be a valid year';
+    hasError = true;
+  }
+
+  if (inputMonth === 2 && inputDay > 31 && (inputYear % 4 !== 0 || (inputYear % 100 === 0 && inputYear % 400 !== 0))) {
+    alerts.day.innerHTML = 'Must be a valid day';
+    hasError = true;
+  }
+
+  if (hasError) {
+    return;
+  }
+
+  let ageInDays = currentDay - inputDay;
+  let ageInMonths = currentMonth - inputMonth;
+  let ageInYears = currentYear - inputYear;
+
+  if (ageInMonths < 0) {
+    ageInMonths += 12;
+    ageInYears--;
+  }
+
+  if (ageInDays < 0) {
+    ageInDays += monthDays[currentMonth - 1];
+    ageInMonths--;
+  }
+
+  document.getElementById('ageInYears').innerHTML = `<span class='color-purp'>${ageInYears}</span> years`;
+  document.getElementById('ageInMonths').innerHTML = `<span class='color-purp'>${ageInMonths}</span> months`;
+  document.getElementById('ageInDays').innerHTML = `<span class='color-purp'>${ageInDays}</span> days`;
+
+  inputDayElement.value = '';
+  inputMonthElement.value = '';
+  inputYearElement.value = '';
+  for (const key in alerts) {
+    clearErrorMessage(alerts[key]);
+  }
+
+
+
+  for (const key in alerts) {
+    alerts[key].innerHTML = '';
+    document.getElementById(key).classList.remove('error-label');
+  }
+}
