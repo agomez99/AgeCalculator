@@ -54,7 +54,7 @@ input:focus {
     background-color: var(--purple);
     border: none;
     position: relative;
-    top: -60px;
+    top: -70px;
 }
 
 .calculate-btn:active {
@@ -112,6 +112,10 @@ input:focus {
 #inputs {
     margin-bottom: 5%;
     margin-top: 5%;
+}
+
+input[type=number] {
+    padding-left: 1rem;
 }
 
 .btn-cal {
