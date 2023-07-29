@@ -1,113 +1,210 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
 
- html{
-
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --lightRed: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --offWhite: hsl(0, 0%, 94%);
+    --lightGrey: hsl(0, 0%, 86%);
+    --smokeyGrey: hsl(0, 1%, 44%);
+    --black: hsl(0, 0%, 8%);
 }
-main{
-    background-color:  hsl(0, 0%, 94%);
+
+main {
+    background-color: var(--offWhite);
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
-    height: 100vh;  
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
 
 
 }
 
-#main-container{
-    background-color:hsl(0, 0%, 100%);
-    width:55rem;
-    height:40rem;
+#main-container {
+    background-color: var(--white);
+    width: 55rem;
+    height: 40rem;
     border-radius: 5% 5% 30% 5%;
     padding: 2%;
 }
-input, label {
-    display:block;
+
+input,
+label {
+    display: block;
 }
 
-input{
+input {
     border-radius: 10px;
-    border: 1px solid hsl(0, 0%, 94%);
-    color:hsl(0, 1%, 44%);
+    border: 1px solid var(--lightGrey);
+    color: var(--smokeyGrey);
     font-weight: 700;
 }
 
-input[type=number] {
-padding-left: 2rem;
+input:focus {
+    outline-color: var(--purple);
 }
-.calculate-btn{
+
+
+.calculate-btn {
     border-radius: 50%;
-    height:100px;
-    width:100px;
-    background-color: hsl(259, 100%, 65%);
+    height: 100px;
+    width: 100px;
+    background-color: var(--purple);
     border: none;
     position: relative;
     top: -60px;
 }
-.calculate-btn:active{
-    background-color: black;
+
+.calculate-btn:active {
+    background-color: var(--black);
     transform: translateY(4px);
 
 }
-.title-day, .title-month, .title-year{
-    color:hsl(0, 1%, 44%);
-    font-weight: 700;
 
+#title-error,
+#month-error,
+#year-error {
+    color: var(--smokeyGrey);
+    font-weight: 700;
 }
 
-#day, #month, #year{
+
+#day,
+#month,
+#year {
     font-size: 3rem;
     width: 170px;
-    margin-right:2rem;
+    margin-right: 2rem;
     font-size: 32px;
-    height:80px;
-   
+    height: 80px;
+    color: var(--black);
+
 
 }
 
-#ageInYears, #ageInMonths, #ageInDays{
+#ageInYears,
+#ageInMonths,
+#ageInDays {
     font-size: 5rem;
 }
 
-#total{
+#total {
     margin-left: 5%;
     margin-top: -10%;
-    line-height:110px;
+    line-height: 110px;
 }
 
-#titles{
+#titles {
     margin-right: 15%;
 
 }
-#alert-day, #alert-month, #alert-year{
-    color:hsl(0, 100%, 67%);
+
+#alert-day,
+#alert-month,
+#alert-year {
+    color: var(--lightRed);
     font-style: italic;
 }
 
 
-#inputs{
+#inputs {
     margin-bottom: 5%;
     margin-top: 5%;
 }
 
-.btn-cal{
+.btn-cal {
     margin-left: 80%;
 }
 
-.color-purp{
-    color: hsl(259, 100%, 65%);
+.color-purp {
+    color: var(--purple);
 }
 
-#ageInYears, #ageInMonths, #ageInDays{
+#ageInYears,
+#ageInMonths,
+#ageInDays {
     font-size: 110px;
     font-weight: 900;
     font-style: italic;
 }
+
 hr {
-    width: 80%; /* You can change this value to whatever you need, such as '200px', '75%', etc. */
-    margin: 0 auto; /* Optional: To center the <hr> horizontally on the page */
-  }
-  .error-label {
-    color: red;
-  }
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    #main-container {
+        height: 35rem;
+        width: 100%;
+
+    }
+
+    input#day,
+    input#month,
+    input#year {
+        font-size: 1.5rem;
+    }
+
+    #ageInYears,
+    #ageInMonths,
+    #ageInDays {
+        font-size: 3.5rem;
+    }
+
+    #day,
+    #month,
+    #year {
+        font-size: 1rem;
+        width: 100px;
+        margin-right: 1rem;
+        font-size: 32px;
+        height: 60px;
+    }
+
+    .calculate-btn {
+        height: 70px;
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        left: -200%;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    #inputs {
+        margin-bottom: 15%;
+        margin-top: 15%;
+    }
+
+    #total {
+        margin-left: 5%;
+        margin-top: -10%;
+        line-height: 50px;
+    }
+
+    #alert-day,
+    #alert-month,
+    #alert-year {
+        font-size: 0.7rem;
+    }
+
+    .btn-cal {
+        margin-top: 10%;
+    }
+
+    .button-image {
+        height: 40%;
+    }
+
+    input[type=number] {
+        padding-left: 1rem;
+    }
+
+
+}
